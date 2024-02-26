@@ -1,9 +1,29 @@
 import React from "react";
-import { Box, Button, Container, Flex, FormControl, FormLabel, Heading, Input, Stack, Text, Textarea, Checkbox, Select, Progress, Alert, AlertIcon, useToast, Image } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, FormControl, FormLabel, Heading, Input, Stack, Text, Textarea, Checkbox, Select, Progress, Alert, AlertIcon, useToast, Image, Spinner } from "@chakra-ui/react";
 import { FaArrowRight, FaBrain, FaDatabase, FaLock, FaRocket, FaWrench } from "react-icons/fa";
 
 const Index = () => {
+  const [isDeploying, setIsDeploying] = React.useState(false);
+  const [deployStep, setDeployStep] = React.useState(0);
   const toast = useToast();
+
+  const handleDeploy = () => {
+    setIsDeploying(true);
+    setDeployStep(1);
+    setTimeout(() => setDeployStep(2), 1000); // Simulate the deployment step sequence
+    setTimeout(() => setDeployStep(3), 2000);
+    setTimeout(() => {
+      setIsDeploying(false);
+      setDeployStep(0);
+      toast({
+        title: "Deployment complete.",
+        description: "Your AI model has been deployed successfully.",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
+    }, 3000);
+  };
 
   const handleOnboard = () => {
     toast({
@@ -104,9 +124,32 @@ const Index = () => {
             <option value="cloud">Cloud</option>
             <option value="on-prem">On-premises</option>
           </Select>
-          <Button colorScheme="green" mt={3} w="full">
-            Deploy <FaRocket />
-          </Button>
+          {isDeploying ? (
+            <Flex direction="column" align="center" justify="center">
+              {deployStep === 1 && (
+                <>
+                  <Text>Initializing deployment...</Text>
+                  <Spinner />
+                </>
+              )}
+              {deployStep === 2 && (
+                <>
+                  <Text>Deploying model...</Text>
+                  <Spinner />
+                </>
+              )}
+              {deployStep === 3 && (
+                <>
+                  <Text>Finalizing...</Text>
+                  <Spinner />
+                </>
+              )}
+            </Flex>
+          ) : (
+            <Button colorScheme="green" mt={3} w="full" onClick={handleDeploy}>
+              Deploy <FaRocket />
+            </Button>
+          )}
         </Box>
       </Flex>
 
