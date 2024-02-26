@@ -31,7 +31,7 @@ const Onboarding = ({ onNext }) => {
           <Input placeholder="Specify the primary task" />
         </FormControl>
         <Button
-          colorScheme="teal"
+          variant="solid"
           mt={4}
           onClick={() => {
             handleOnboard();

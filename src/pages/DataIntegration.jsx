@@ -18,7 +18,7 @@ const DataIntegration = ({ onNext }) => {
           <Textarea placeholder="Map your data fields here" />
         </FormControl>
         <Button
-          colorScheme="teal"
+          variant="solid"
           mt={4}
           onClick={() => {
             if (onNext) onNext();

@@ -22,7 +22,7 @@ const ModelSelection = ({ onNext }) => {
           <Input placeholder="Specify model parameters" />
         </FormControl>
         <Button
-          colorScheme="teal"
+          variant="solid"
           mt={4}
           onClick={() => {
             if (onNext) onNext();
