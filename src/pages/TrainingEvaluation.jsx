@@ -14,7 +14,7 @@ const TrainingEvaluation = ({ onNext }) => {
           <AlertIcon />
           Model is training. Current accuracy: 87%
         </Alert>
-        <Button colorScheme="teal" mt={4} onClick={onNext}>
+        <Button colorScheme="teal" mt={4} onClick={() => { if (onNext) onNext(); }}>
           Next <FaArrowRight />
         </Button>
       </Box>

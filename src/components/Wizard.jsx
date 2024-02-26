@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import { Box } from '@chakra-ui/react';
-import Onboarding from '../pages/Onboarding';
-import DataIntegration from '../pages/DataIntegration';
-import ModelSelection from '../pages/ModelSelection';
-import TrainingEvaluation from '../pages/TrainingEvaluation';
+import { useState } from "react";
+import { Box } from "@chakra-ui/react";
+import Onboarding from "../pages/Onboarding";
+import DataIntegration from "../pages/DataIntegration";
+import ModelSelection from "../pages/ModelSelection";
+import TrainingEvaluation from "../pages/TrainingEvaluation";
 
 const steps = [
-  { name: 'Onboarding', component: Onboarding },
-  { name: 'Data Integration', component: DataIntegration },
-  { name: 'Model Selection', component: ModelSelection },
-  { name: 'Training Evaluation', component: TrainingEvaluation },
+  { name: "Onboarding", component: Onboarding },
+  { name: "Data Integration", component: DataIntegration },
+  { name: "Model Selection", component: ModelSelection },
+  { name: "Training Evaluation", component: TrainingEvaluation },
 ];
 
 const Wizard = () => {
@@ -19,7 +19,7 @@ const Wizard = () => {
 
   return (
     <Box>
-      <CurrentStepComponent />
+      <CurrentStepComponent onNext={() => setCurrentStep(currentStep + 1)} />
     </Box>
   );
 };

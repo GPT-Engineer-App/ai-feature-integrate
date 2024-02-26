@@ -21,7 +21,13 @@ const ModelSelection = ({ onNext }) => {
           <FormLabel>Customize Parameters</FormLabel>
           <Input placeholder="Specify model parameters" />
         </FormControl>
-        <Button colorScheme="teal" mt={4} onClick={onNext}>
+        <Button
+          colorScheme="teal"
+          mt={4}
+          onClick={() => {
+            if (onNext) onNext();
+          }}
+        >
           Next <FaArrowRight />
         </Button>
       </Box>

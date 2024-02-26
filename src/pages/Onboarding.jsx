@@ -30,7 +30,14 @@ const Onboarding = ({ onNext }) => {
           <FormLabel>Primary Task for AI</FormLabel>
           <Input placeholder="Specify the primary task" />
         </FormControl>
-        <Button colorScheme="teal" mt={4} onClick={handleOnboard}>
+        <Button
+          colorScheme="teal"
+          mt={4}
+          onClick={() => {
+            handleOnboard();
+            onNext();
+          }}
+        >
           Create Project <FaArrowRight />
         </Button>
       </Box>
