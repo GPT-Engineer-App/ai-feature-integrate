@@ -18,7 +18,7 @@ const Wizard = () => {
   const CurrentStepComponent = steps[currentStep].component;
 
   return (
-    <Box>
+    <Box maxW="container.md" mx="auto">
       <CurrentStepComponent onNext={() => setCurrentStep(currentStep + 1)} />
     </Box>
   );

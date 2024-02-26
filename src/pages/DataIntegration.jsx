@@ -5,7 +5,7 @@ import { FaArrowRight, FaDatabase } from "react-icons/fa";
 const DataIntegration = ({ onNext }) => {
   return (
     <Flex direction="column" align="center" justify="center" height="100vh">
-      <Box p={5} shadow="md" borderWidth="1px" borderRadius="md">
+      <Box p={[3, 5]} shadow="md" borderWidth="1px" borderRadius="md" maxW="container.md" mx="auto">
         <Heading size="md" my="2" textAlign="center">
           <FaDatabase /> Data Integration
         </Heading>
