@@ -5,53 +5,45 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
   colors: {
-    brand: {
-      900: "#1a365d",
-      800: "#153e75",
-      700: "#2a69ac",
-    },
-    evervault: {
-      500: "#0A2540", // Assuming a dark blue tone similar to evervault.com
-      300: "#F4F5F7", // Assuming a light background color similar to evervault.com
-    },
+    primary: "#0A2540", // dark blue
+    secondary: "#00FF5F", // neon green
+    background: "#F4F5F7", // light background
   },
   fonts: {
-    heading: "Inter, sans-serif", // Assuming Inter is used, which is a common sans-serif font
-    body: "Inter, sans-serif",
+    heading: "'Matter', sans-serif", // Evervault uses Matter
+    body: "'Matter', sans-serif",
   },
   components: {
     Button: {
       baseStyle: {
-        fontWeight: "normal",
+        fontWeight: "bold",
       },
       variants: {
         solid: (props) => ({
-          bg: props.colorMode === "dark" ? "evervault.500" : "evervault.500",
+          bg: "primary",
           color: "white",
+          _hover: {
+            bg: "secondary",
+            transform: "scale(1.05)",
+          },
         }),
       },
     },
     Heading: {
       baseStyle: {
-        color: "evervault.500",
+        color: "primary",
       },
     },
     Input: {
       baseStyle: {
-        field: {
-          borderColor: "evervault.300",
-          _placeholder: {
-            color: "gray.500",
-          },
-        },
+        borderColor: "primary",
+        focusBorderColor: "secondary",
       },
     },
     Textarea: {
       baseStyle: {
-        borderColor: "evervault.300",
-        _placeholder: {
-          color: "gray.500",
-        },
+        borderColor: "primary",
+        focusBorderColor: "secondary",
       },
     },
   },
