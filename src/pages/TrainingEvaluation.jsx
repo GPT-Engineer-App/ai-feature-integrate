@@ -5,7 +5,7 @@ import { FaArrowRight, FaRocket } from "react-icons/fa";
 const TrainingEvaluation = ({ onNext }) => {
   return (
     <Flex direction="column" align="center" justify="center" height="100vh">
-      <Box p={[3, 5]} shadow="md" borderWidth="1px" borderRadius="md" maxW="container.md" mx="auto">
+      <Box p={[3, 5]} shadow="md" borderWidth="1px" borderRadius="md" minW="648px" maxW="container.md" mx="auto">
         <Heading size="md" my="2" textAlign="center">
           <FaRocket /> Training and Evaluation
         </Heading>
